@@ -38,7 +38,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:text="@string/submit_button"
-        android:onClick="checkGuess"
-        android:imeOptions="actionDone" />
+        android:onClick="checkGuess" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
