@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Guessing Game</string>
+    <string name="guess_label">Guess a number</string>
+    <string name="guess_correct_label">You guessed correctly!</string>
+    <string name="guess_incorrect_label">You guessed incorrectly!</string>
+    <string name="submit_button">Submit</string>
+</resources>
