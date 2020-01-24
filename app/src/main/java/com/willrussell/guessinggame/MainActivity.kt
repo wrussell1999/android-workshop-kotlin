@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         inputEditText!!.setOnEditorActionListener { v, actionId, event ->
             if ((event?.keyCode == KeyEvent.KEYCODE_ENTER) || (actionId == EditorInfo.IME_ACTION_DONE)) {
                 checkGuess(v)
-                true
+
             }
             false
         }
@@ -39,14 +39,24 @@ class MainActivity : AppCompatActivity() {
 
     fun checkGuess(v: View) {
         val input = inputEditText!!.text.toString()
-        val guessedValue = Integer.parseInt(input)
+        if (input != "") {
+            val guessedValue = Integer.parseInt(input)
 
-        if (guessedValue == randomNumber) {
-            val intent = Intent(this, PartyActivity::class.java)
-            startActivity(intent)
+            if (guessedValue == randomNumber) {
+                val intent = Intent(this, PartyActivity::class.java)
+                startActivityForResult(intent, 1);
 
-        } else {
-            numberView!!.text = resources.getString(R.string.guess_incorrect_label)
+            } else {
+                numberView!!.text = resources.getString(R.string.guess_incorrect_label)
+            }
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == 1) {
+            generateNumber()
         }
     }
 }
