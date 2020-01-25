@@ -34,20 +34,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun generateNumber() {
-        randomNumber = Random.nextInt(10)
+        randomNumber = Random.nextInt(10) // Generate a number between 0 and 10
     }
 
     fun checkGuess(v: View) {
-        val input = inputEditText!!.text.toString()
-        if (input != "") {
-            val guessedValue = Integer.parseInt(input)
+        val input = inputEditText!!.text.toString() // Get the number from the EditText
+        if (input != "") { // Make sure the string isn't empty
+            val guessedValue = Integer.parseInt(input) // Turn the string into an integer
 
-            if (guessedValue == randomNumber) {
+            if (guessedValue == randomNumber) { // Check the number is correct
                 val intent = Intent(this, PartyActivity::class.java)
-                startActivityForResult(intent, 1);
+                startActivityForResult(intent, 1); // Start a new activity, that will return the request code of 1 when it's finished
 
             } else {
-                numberView!!.text = resources.getString(R.string.guess_incorrect_label)
+                numberView!!.text = resources.getString(R.string.guess_incorrect_label) // Set the text on the screen
             }
         }
     }

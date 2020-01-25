@@ -12,7 +12,6 @@ class PartyActivity : AppCompatActivity() {
     }
 
     fun tryAgain(v: View) {
-        finish()
-        // return to say do it again
+        finish() // Finish the activity
     }
 }
