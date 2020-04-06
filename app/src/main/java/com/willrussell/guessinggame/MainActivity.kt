@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
         inputEditText!!.setOnEditorActionListener { v, actionId, event ->
             if ((event?.keyCode == KeyEvent.KEYCODE_ENTER) || (actionId == EditorInfo.IME_ACTION_DONE)) {
                 checkGuess(v)
-
             }
             false
         }
